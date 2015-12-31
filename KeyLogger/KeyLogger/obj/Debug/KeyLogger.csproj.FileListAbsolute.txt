@@ -1,0 +1,8 @@
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\bin\Debug\KeyLogger.exe.config
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.csprojResolveAssemblyReference.cache
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.Properties.Resources.resources
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.csproj.GenerateResource.Cache
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\bin\Debug\KeyLogger.exe
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\bin\Debug\KeyLogger.pdb
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.exe
+C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.pdb
