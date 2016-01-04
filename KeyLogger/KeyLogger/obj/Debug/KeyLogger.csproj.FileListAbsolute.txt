@@ -6,6 +6,3 @@ C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\bin\Debug\KeyL
 C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\bin\Debug\KeyLogger.pdb
 C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.exe
 C:\Users\Joe Ma\Documents\Joe\Dev\C#_Projects\KeyLogger\KeyLogger\obj\Debug\KeyLogger.pdb
-C:\Users\Joe Ma\Documents\Joe\Dev\GitHub\Windows-KeyLogger\KeyLogger\KeyLogger\bin\Debug\KeyLogger.exe.config
-C:\Users\Joe Ma\Documents\Joe\Dev\GitHub\Windows-KeyLogger\KeyLogger\KeyLogger\obj\Debug\KeyLogger.exe
-C:\Users\Joe Ma\Documents\Joe\Dev\GitHub\Windows-KeyLogger\KeyLogger\KeyLogger\obj\Debug\KeyLogger.pdb

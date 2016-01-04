@@ -23,6 +23,14 @@ public class KeyboardStatus
         capsLock = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
         numLock = (((ushort)GetKeyState(0x90)) & 0xffff) != 0;
         scrollLock = (((ushort)GetKeyState(0x91)) & 0xffff) != 0;
+
+        string capsStatus = "CapsLock: " + capsLock;
+        string numStatus = "NumLock: " + numLock;
+        string scrollStatus = "ScrollLock: " + scrollLock;
+        TextPrinter.printLine(capsStatus);
+        TextPrinter.printLine(numStatus);
+        TextPrinter.printLine(scrollStatus);
+        TextPrinter.printLine();
     }
 
     public static void setShiftFlag(bool status)

