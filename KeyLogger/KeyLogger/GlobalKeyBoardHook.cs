@@ -1,5 +1,6 @@
 ﻿#region License_Do_Not_Remove
 /* 
+*  Author: Uncle Bill
 *  This is the scource code made by TheDarkJoker94 but I did some changes for it in order to fulfill
 *  a situation that I need.
 * 

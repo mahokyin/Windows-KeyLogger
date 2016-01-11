@@ -3,6 +3,8 @@ using System.IO;
 
 public class TextPrinter
 {
+    private const int MAX_WORDS = 100;
+
     private static string path = Environment.MachineName + ".txt";
     private static int count = 0;
 
@@ -45,7 +47,7 @@ public class TextPrinter
     private static void checking()
     {
         count++;
-        if (count == 30)
+        if (count == MAX_WORDS)
         {
             textWriter.WriteLine();
             textWriter.Close();

