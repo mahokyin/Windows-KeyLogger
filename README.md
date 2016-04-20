@@ -4,4 +4,4 @@ This is the program which can record what people typed in the computer. It will 
 Skills:
 C#, PHP
 
-There are many things needed to be imporved.
+![Alt text](https://github.com/mahokyin/Windows-KeyLogger/blob/master/output.png )
